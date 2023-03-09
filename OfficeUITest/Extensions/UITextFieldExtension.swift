@@ -20,15 +20,12 @@ extension UITextField {
         self.inputView = datePicker
         
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 40))
+        let btnDone = UIBarButtonItem(title: "Done", style: .plain, target: target, action: selector)
         let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let btnCancel = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(btnCancel))
-        let btnDone = UIBarButtonItem(title: "Done", style: .plain, target: nil, action: nil)
-        toolBar.setItems([btnDone, flexible, btnCancel], animated: false)
+        toolBar.setItems([btnDone, flexible], animated: false)
         self.inputAccessoryView = toolBar //9
     }
     
-    @objc func btnCancel() {
-        self.resignFirstResponder()
-    }
+    
     
 }

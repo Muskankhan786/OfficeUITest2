@@ -22,7 +22,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtFieldPassword: UITextField!
     @IBOutlet weak var lblConfirmPassword: UILabel!
     @IBOutlet weak var txtFieldConfirmPassword: UITextField!
-    @IBOutlet weak var datePickerForDOB: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +30,11 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func btnLogin(_ sender: Any) {
-//        if sbmtBtnTapped(sender: <#T##UIButton#>) {
-//            (sender as AnyObject).addTarget(self, action: #selector(sbmtBtnTapped(sender:)), for: .touchUpInside)
-//        }
-//        else {
+        if (sender as AnyObject).addTarget(self, action: #selector(sbmtBtnTapped(sender:)), for: .touchUpInside) -> Bool {
+        
             guard let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeTabBarVc") as? HomeTabBarVc else { return }
             self.navigationController?.pushViewController(homeVC, animated: true)
-//        }
+        }
     }
     
     
